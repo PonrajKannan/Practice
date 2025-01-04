@@ -9,9 +9,8 @@ public class Subject {
 	private int subjectId;
 	private String subjectName;
 	
-//	@ManyToOne
-//    @JoinColumn(name = "studentId")
-//	private Student student;
+	@ManyToOne
+	private Student student;
 
 	public int getSubjectId() {
 		return subjectId;
@@ -29,17 +28,17 @@ public class Subject {
 		this.subjectName = subjectName;
 	}
 
-//	public Student getStudent() {
-//		return student;
-//	}
-//
-//	public void setStudent(Student student) {
-//		this.student = student;
-//	}
-//
-//	@Override
-//	public String toString() {
-//		return "Subject [subjectId=" + subjectId + ", subjectName=" + subjectName + ", student=" + student + "]";
-//	}
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+
+	@Override
+	public String toString() {
+		return "Subject [subjectId=" + subjectId + ", subjectName=" + subjectName + ", student=" + student + "]";
+	}
 	
 }

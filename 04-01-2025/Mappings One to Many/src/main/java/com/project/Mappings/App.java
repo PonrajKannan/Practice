@@ -17,29 +17,30 @@ public class App {
 
 		Transaction tx = session.beginTransaction();
 		
-		// test to map the second subject to the first student
-		
-		Student student = (Student) session.get(Student.class, 1);
-		Subject subject = new Subject();
-		subject.setSubjectId(1002);
-		subject.setSubjectName("MySQL");
-		
-		student.getStudentSubject().add(subject);
-		
-		// test
-		
 //		Student student = new Student();
-//		student.setStudentId(1);
-//		student.setStudentName("Kavya");
+//		student.setStudentId(2);
+//		student.setStudentName("Praveen");
 //		
 //		Subject subject = new Subject();
 //		subject.setSubjectId(1001);
 //		subject.setSubjectName("Java");
 //		
 //		student.getStudentSubject().add(subject);
+//		subject.setStudent(student);
+		
+		// Test
+		
+		Student student = (Student) session.get(Student.class, 2);
+		
+		Subject subject = new Subject();
+		subject.setSubjectId(1002);
+		subject.setSubjectName("MySQL");
+		
+		student.getStudentSubject().add(subject);
+		subject.setStudent(student);
 		
 		session.save(subject);
-//		session.save(student);
+		session.save(student);
  		
 		tx.commit();
 		sf.close();

@@ -12,7 +12,7 @@ public class Student {
 	private int studentId;
 	private String studentName;
 	
-	@OneToMany
+	@OneToMany(mappedBy="student")
 	private List<Subject> studentSubject = new LinkedList<Subject>();
 
 	public int getStudentId() {
